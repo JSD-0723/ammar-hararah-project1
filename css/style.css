@@ -29,7 +29,7 @@ body{
 
 .navbar-container{
     display: flex;
-    margin: auto 115px;
+    margin: auto 5%;
     justify-content: space-between;
     height: inherit;
 }
@@ -48,18 +48,18 @@ body{
     font-size: 30px;
     display: flex;
     height: 60px;
-    width: 220px;
+    width: fit-content;
 }
 
 .navbar-item a{
     color: var(--body-text);
     text-decoration: none;
     font-weight: 400;
-    margin: auto 0;
+    margin: auto 10px auto -10px;
 }
 
 .navbar-item > ion-icon{
-    margin: auto 10px auto 20px;
+    margin: auto 20px auto 20px;
 }
 /* Navbar Styling END */
 
@@ -68,7 +68,7 @@ body{
 .welcome-banner{
     position: relative;
     background-color: var(--bg_default);
-    height: 230px;
+    height: 5vw;
     width: 100%;
 }
 
@@ -78,7 +78,7 @@ body{
     width: inherit;
     z-index: 2;
     background:linear-gradient(45deg, var(--brand-primary) 0%, var(--brand-secondary) 120%);;
-    clip-path: polygon(0% 0%, 100% 0%, 0% 60%);
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
 
 }
 .welcome-banner-end-color{
@@ -87,22 +87,22 @@ body{
     width: inherit;
     z-index: 1;
     background:var(--brand-secondary);
-    clip-path: polygon(10% 0%, 100% 0%, 100% 50%);   
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%);   
 }
 
 .welcome-text{
-    z-index: 3;
-    height: inherit;
-    width: inherit;
-    position: absolute;
+    height: 115px;
+    width: fit-content;
     text-align: left;
-    left: 40%;
-    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
 }
 .welcome-text h1{
     color: var(--brand-secondary);
     font-weight: 900;
     margin-bottom: 0;
+    margin-top: 0;
     font-size: 40px;
 }
 
