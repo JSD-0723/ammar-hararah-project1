@@ -67,7 +67,7 @@ body{
 
 .welcome-banner{
     position: relative;
-    background-color: aliceblue;
+    background-color: var(--bg_default);
     height: 230px;
     width: 100%;
 }
@@ -111,6 +111,7 @@ body{
     margin-top: -.25%;
     font-weight: 200;
     font-size: 32px;
+    color: var(--body-text);
 
 }
 
