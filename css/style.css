@@ -5,3 +5,58 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    height: 140px;
+    background-color: var(--bg_default);
+}
+
+.navbar-title{
+    margin: auto 0;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.navbar-title a{
+    text-decoration: none;
+    color: var(--brand-primary);
+}
+
+.navbar-container{
+    display: flex;
+    margin: auto 125px;
+    justify-content: space-between;
+    height: inherit;
+}
+
+.navbar-items{
+    display: flex;
+
+}
+
+.navbar-item{
+    border: 2px solid var(--lines-color);
+    color: var(--body-text);
+    list-style-type: none;
+    border-radius: 10px;
+    margin: auto 5px;
+    font-size: 30px;
+    display: flex;
+    height: 60px;
+    width: 220px;
+}
+
+.navbar-item a{
+    color: var(--body-text);
+    text-decoration: none;
+    font-weight: 400;
+    margin: auto 0;
+}
+
+.navbar-item > ion-icon{
+    margin: auto 10px auto 20px;
+}
