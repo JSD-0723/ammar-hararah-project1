@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700;6..12,800;6..12,900&display=swap');
 :root{
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
@@ -10,6 +9,8 @@ body{
     padding: 0;
 }
 
+/* Navbar Styling Begin */
+
 .navbar{
     height: 140px;
     background-color: var(--bg_default);
@@ -17,7 +18,7 @@ body{
 
 .navbar-title{
     margin: auto 0;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 400;
 }
 
@@ -28,7 +29,7 @@ body{
 
 .navbar-container{
     display: flex;
-    margin: auto 125px;
+    margin: auto 115px;
     justify-content: space-between;
     height: inherit;
 }
@@ -60,3 +61,57 @@ body{
 .navbar-item > ion-icon{
     margin: auto 10px auto 20px;
 }
+/* Navbar Styling END */
+
+/* Welcome Banner Styling Begin */
+
+.welcome-banner{
+    position: relative;
+    background-color: aliceblue;
+    height: 230px;
+    width: 100%;
+}
+
+.welcome-banner-start-color{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    z-index: 2;
+    background:linear-gradient(45deg, var(--brand-primary) 0%, var(--brand-secondary) 120%);;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 60%);
+
+}
+.welcome-banner-end-color{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    z-index: 1;
+    background:var(--brand-secondary);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 50%);   
+}
+
+.welcome-text{
+    z-index: 3;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    text-align: left;
+    left: 40%;
+    top: 30%;
+}
+.welcome-text h1{
+    color: var(--brand-secondary);
+    font-weight: 900;
+    margin-bottom: 0;
+    font-size: 40px;
+}
+
+.welcome-text p{
+    margin-bottom: 0;
+    margin-top: -.25%;
+    font-weight: 200;
+    font-size: 32px;
+
+}
+
+/* Welcome Banner Styling ENDS */
