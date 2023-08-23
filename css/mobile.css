@@ -2,5 +2,63 @@
     .navbar-item span{
         display: none;
     }
+    .container-header .search-bar{
+        flex-direction: column;
+        height: 126px;
+    }
+    .container-header .input,.container-header .search-options{
+        width: 100%;
+        border-right: none;
+    }
+    .container-header .input{
+        border-bottom: 1px solid var(--lines-color);
+    }
+
+    .container-header .search-option{
+        padding: 10px;
+        width: 50%;
+    }
+    .container-items{
+        justify-content: center;
+    }
+    .welcome-banner-start-color{
+        clip-path: polygon(0% 0%, 125% 0%, 0% 17%);
+    }
+    .welcome-banner-end-color{
+        clip-path: polygon(-25% 0%, 100% 0%, 100% 17%);
+    }
+
+    .navbar{
+        height: 70px;
+    }
+
+    .navbar-title{
+        font-size: 16px;
+    }
+
+    .navbar-item{
+        border-radius: 5px;
+        padding: 3px 0;
+    }
+
+    .welcome-text-container{
+        padding-top: 30px;
+    }
+
+    .welcome-text h1{
+        font-size: 20px;
+    }
+
+    .welcome-text h2{
+        font-size: 16px;
+    }
+    .welcome-text *{
+        padding-right: 15px;
+    }
+
+    .welcome-banner{
+        height: 118px;
+    }
+
 }
 

@@ -53,7 +53,7 @@ body{
     margin: auto 0 auto 5px;
     font-size: 19px;
     display: flex;
-    height: 42px;
+    padding: 7px 5px;
     width: fit-content;
     background-color: transparent;
 }
@@ -210,12 +210,15 @@ body{
     color: var(--body-text);
     font-weight: 600;
 }
-
+.container-header .search-options{
+    width: 27%;
+    display: flex;
+}
 .container-header .search-option{
-    width: 13%;
     margin: auto;
     border-right: 1px solid var(--lines-color);
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: left;
     flex-direction: column;
