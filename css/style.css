@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700;6..12,800;6..12,900&display=swap');
-:root{
+:root *{
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -29,11 +29,15 @@ body{
     color: var(--brand-primary);
 }
 
-.navbar-container{
+.content,.navbar-container,.container-header{
     display: flex;
     margin: auto 4%;
-    justify-content: space-between;
     height: inherit;
+    justify-content: space-between;
+}
+
+.content{
+    flex-direction: column;
 }
 
 .navbar-items{
@@ -42,26 +46,35 @@ body{
 }
 
 .navbar-item{
-    border: 2px solid var(--lines-color);
+    border: 1px solid var(--lines-color);
     color: var(--body-text);
     list-style-type: none;
-    border-radius: 10px;
-    margin: auto 5px;
-    font-size: 18px;
+    border-radius: 7px;
+    margin: auto 0 auto 5px;
+    font-size: 19px;
     display: flex;
-    height: 40px;
+    height: 42px;
     width: fit-content;
+    background-color: transparent;
+}
+.navbar-item:hover{
+    cursor: pointer;
+    background-color: var(--lines-color);
 }
 
 .navbar-item *{
     color: var(--body-text);
     text-decoration: none;
     font-weight: 500;
-    margin: auto 10px auto -10px;
+    margin: auto;
+}
+
+.navbar-item span{
+    margin-right: 10px;
 }
 
 .navbar-item > ion-icon{
-    margin: auto 20px auto 20px;
+    margin: auto 7px auto 10px;
 }
 /* Navbar Styling END */
 
@@ -70,7 +83,7 @@ body{
 .welcome-banner{
     position: relative;
     background-color: var(--bg_default);
-    height: 90px;
+    height: 152px;
     width: 100%;
 }
 
@@ -79,22 +92,31 @@ body{
     height: inherit;
     width: inherit;
     z-index: 2;
-    background:linear-gradient(45deg, var(--brand-primary) 0%, var(--brand-secondary) 80%);;
-    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    background:linear-gradient(45deg, var(--brand-primary) 0%, var(--banner-end) 80%);;
+    clip-path: polygon(0% 0%, 90% 0%, 0% 60%);
 
 }
+
 .welcome-banner-end-color{
     position: absolute;
     height: inherit;
     width: inherit;
     z-index: 1;
     background:var(--brand-secondary);
-    clip-path: polygon(10% 0%, 100% 0%, 100% 100%);   
+    clip-path: polygon(10% 0%, 100% 0%, 100% 60%);   
+}
+.welcome-banner-start-color,.welcome-banner-end-color{
+    
+
+    -moz-box-shadow: 0px 20px 10px -20px rgba(0,0,0,0.45) inset; 
+    -webkit-box-shadow: 0px 20px 10px -20px rgba(0,0,0,0.45) inset;
+    box-shadow: 0px 20px 10px -20px rgba(0,0,0,0.45) inset;
 }
 
 .welcome-text-container{
     width: 100%;
     background-color: var(--bg_default);
+    padding-top: 65px;
 }
 
 .welcome-text{
@@ -104,59 +126,65 @@ body{
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
     width: fit-content;
-    padding: 0 30px;
     margin: 0 auto;
+    
 }
 .welcome-text h1{
     
     font-weight: 900;
     margin-bottom: 0;
     margin-top: 0;
-    font-size: 25px;
+    font-size: 27px;
     color: var(--brand-secondary);
 }
 
-.welcome-text p{
+.welcome-text h2{
     margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 200;
-    font-size: 20px;
+    margin-top: -5px;
+    font-weight: 300;
+    font-size: 22px;
     color: var(--body-text);
+}
+
+.welcome-text *{
+    padding-left: 15px;
 }
 
 /* Welcome Banner Styling ENDS */
 
-.content{
-    background-color: var(--bg_body);
+.container{
     display: flex;
     flex-direction: column;
+    background-color: var(--bg_body);
 }
 
 /* Search Bar Styling STARTS */
 
-.search-bar-container{
+.container-header{
     display: flex;
-    margin: 0 auto;
-    padding: 20px 0;
-    width: 92%;
+    padding: 28px 0 25px 0;
 }
-.search-result{
-    margin: 0 auto;
-    max-width: 93%;
+
+.container-title h2{
+    font-size: 32px;
+    margin-top: 0;
+    font-weight: 800;
+    text-align: left;
 }
-.search-bar-container .search-bar{
+
+.container-header .search-bar{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 70px;
+    height: 63px;
     border: 0;
-    -moz-box-shadow: 0 0 10px var(--lines-color);
-    -webkit-box-shadow: 0 0 10px var(--lines-color);
-    box-shadow: 0 0 10px var(--lines-color);
+    -moz-box-shadow: 0px 0px 13px var(--lines-color);
+    -webkit-box-shadow: 0px 0px 13px var(--lines-color);
+    box-shadow: 0px 0px 13px var(--lines-color);
     background-color: var(--bg_default);
     border-radius: 15px;
 }
-.search-bar-container .input{
+.container-header .input{
     margin: auto;
     width: 72.6%;
     height: 100%;
@@ -166,82 +194,173 @@ body{
  
 }
 
-.search-bar-container .input ion-icon{
-    font-size: 20px;
+.container-header .input ion-icon{
+    font-size: 22px;
     padding: 0 10px;
 }
 
-.search-bar-container .input input,
-.search-bar-container .input input:focus-visible{
+.container-header .input input,
+.container-header .input input:focus-visible{
+    width: 90%;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 21px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: var(--body-text);
+    font-weight: 600;
 }
 
-.search-bar-container .sort-by{
-    width: 13.77%;
+.container-header .search-option{
+    width: 13%;
     margin: auto;
     border-right: 1px solid var(--lines-color);
-}
-.search-bar-container .filter-by{
-    width: 13.5%;
     height: 100%;
-
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
+.container-header .search-option:last-child{
+    border: none;
+}
+.container-header .search-option select{
+    color: var(--body-text);
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 0;
+}
+
 /* Search Bar Styling ENDS */
 
-.search-result-content{
+
+.container-items{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 40px;
     flex-direction: row;
-    width: 100%;
-    gap:5% 5%;
     justify-content: space-between;
+    gap: 40px;
 }
-.result-card{
-    display: inline-flex;
-    flex-direction: column;
-    flex: 0 0 20%;
-    width: 480px;
-    height: 430px;
-    background-color:var(--bg_default);
-    border: unset;
+.container-items:after {
+    content: "";
+    flex: auto;
+}
+
+
+.card{
+    width: 320px;
+    max-width: 320px;
+    background-color: var(--bg_default);
     border-radius: 10px;
-    -moz-box-shadow: 0 0 3px var(--lines-color);
-    -webkit-box-shadow: 0 0 3px var(--lines-color);
-    box-shadow: 0 0 3px var(--lines-color);
-    margin-bottom: 5%;
+    -moz-box-shadow: 0px 0px 2px var(--lines-color);
+    -webkit-box-shadow: 0px 0px 2px var(--lines-color);
+    box-shadow: 0px 0px 2px var(--lines-color);
+    flex-grow: 1;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: var(--bg_body);
 }
 .card-image{
-    height: 48%;
-    width: 100%;
-    position: relative;
-    border-radius: 10px;
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
+    overflow: hidden;
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+
 }
 .card-image img{
     width: 100%;
-    border-radius: inherit;
+    height: 100%;
+    display: none;
+}
+
+.card-image{
+    background-size: cover;
+    background-position: center;
 }
 
 .card-details{
-    height: 52%;
-    width: 100%;
-    position: relative;
-    margin: 5%;
+    padding: 20px;
 }
-
-.card-title{
-    position: absolute;
-    top: 0;
-}
-
-.card-title-text h2{
+.card-details p,.card-details h3{
     margin-top: 0;
+    margin-bottom: 0;
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card-info{
-    position: absolute;
-    bottom: 0;
+.card-details h3{
+    font-size: 19px;
+    font-weight: 800;
 }
+.card-info p{
+    color: grey;
+    margin-top: 15px;
+}
+.card-info{
+    margin-top: 30px;
+}
+
+/* Sticky Navbar Start */
+
+.footer-navbar{
+    bottom: 0;
+    width: 100%;
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    min-height: 235px;
+    background-color: var(--bg_default);
+    box-shadow: 0px 20px 10px 20px var(--lines-color);
+}
+
+.footer-navbar.visible{
+    display: block;
+}
+
+
+/* Sticky Navbar END */
+
+
+/* Star Styling */
+.star-ratings {
+    width: fit-content;
+    unicode-bidi: bidi-override;
+    color: var(--bg_body);
+    font-size: 24px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .star-ratings .fill-ratings {
+    color: #f4af09;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .star-ratings .fill-ratings span {
+    display: inline-block;
+  }
+  .star-ratings .empty-ratings {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+
+  .star-ratings .fill-ratings, .star-ratings .empty-ratings{
+    text-shadow: -1px 0 #f4af09, 0 1px #f4af09, 1px 0 #f4af09, 0 -1px #f4af09;
+
+  }
+  

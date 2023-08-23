@@ -24,12 +24,10 @@
                     <ion-icon name="moon-outline"></ion-icon>
                     <span>Dark Mode</span>
                 </button>
-                <a class="navbar-item" href="favourites.html">
-                    <button type="button">
+                <button id="toggle-fav" class="navbar-item" type="button">
                     <ion-icon name="heart-outline"></ion-icon>
                     <span>Favourites</span>
-                    </button>
-                </a>
+                </button>
 
             </nav>
         </div>
@@ -42,153 +40,62 @@
         <div class="welcome-banner-end-color">
 
         </div>
-    </div>
-    <div class="welcome-text-container">
-        <div class="welcome-text">
-        <h1>
-            Welcome to our website!
-        </h1>
-        <p>
-            We have a new design that's fresh, modern, and easy to use.
-        </p>
-        
+        <div class="welcome-text-container">
+            <div class="welcome-text">
+                <h1>
+                    Welcome to our website!
+                </h1>
+                <h2>
+                    We have a new design that's fresh, modern, and easy to use.
+                </h2>
+
+            </div>
         </div>
     </div>
-    <div class="content">
-        <div class="search-bar-container">
+
+    <div class="container">
+        <div class="container-header">
             <div class="search-bar">
                 <div class="input">
                     <ion-icon name="search-outline"></ion-icon>
                     <input type="text" placeholder="Search the website...">
                 </div>
-                <div class="sort-by"></div>
-                <div class="filter-by"></div>
+                <div id="sort-by" class="search-option">
+                    <span class="option-title">Sort by:</span>
+                    <select name="sort-by" id="search-sort-by">
+                        <option value="default">Default</option>
+                        <option value="subject">Subject</option>
+                        <option value="rating">Rating</option>
+                        <option value="author">Author</option>
+                    </select>
+                </div>
+                <div id="filter-by" class="search-option">
+                    <span class="option-title">Filter by:</span>
+                    <select name="sort-by" id="search-sort-by">
+                        <option value="default">Default</option>
+                        <option value="subject">Subject</option>
+                        <option value="rating">Rating</option>
+                        <option value="author">Author</option>
+                    </select>
+                </div>
             </div>
         </div>
 
-        <div class="search-result">
-            <div class="search-result-title">
+        <div class="content">
+            <div class="container-title">
                 <h2>"24" Web Topics Found</h2>
             </div>
-            <div class="search-result-content">
-                <div class="result-card">
-                    <div class="card-image">
-                        <img src="imgs/html.png" alt="HTML">
-                    </div>
-                    <div class="card-details">
-
-                        <div class="card-title">
-                            <div class="card-title-class">Web Development Languages</div>
-                            <div class="card-title-text"><h2>HTML</h2></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="star-rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star-outline"></ion-icon>
-                            </div>
-                            <div class="author-name">Author: Sarah Smith</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-card">
-                    <div class="card-image">
-                        <img src="imgs/css.webp" alt="CSS">
-                    </div>
-                    <div class="card-details">
-
-                        <div class="card-title">
-                            <div class="card-title-class">Web Development Languages</div>
-                            <div class="card-title-text"><h2>CSS</h2></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="star-rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star-outline"></ion-icon>
-                            </div>
-                            <div class="author-name">Author: David Lee</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-card">
-                    <div class="card-image">
-                        <img src="imgs/javascript.jpg" alt="JavaScript">
-                    </div>
-                    <div class="card-details">
-
-                        <div class="card-title">
-                            <div class="card-title-class">Web Development Languages</div>
-                            <div class="card-title-text"><h2>JavaScript</h2></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="star-rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star-outline"></ion-icon>
-                            </div>
-                            <div class="author-name">Author: Emily Chen</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="result-card">
-                    <div class="card-image">
-                        <img src="imgs/javascript.jpg" alt="JavaScript">
-                    </div>
-                    <div class="card-details">
-
-                        <div class="card-title">
-                            <div class="card-title-class">Web Development Languages</div>
-                            <div class="card-title-text"><h2>JavaScript</h2></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="star-rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star-outline"></ion-icon>
-                            </div>
-                            <div class="author-name">Author: Emily Chen</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-card">
-                    <div class="card-image">
-                        <img src="imgs/javascript.jpg" alt="JavaScript">
-                    </div>
-                    <div class="card-details">
-
-                        <div class="card-title">
-                            <div class="card-title-class">Web Development Languages</div>
-                            <div class="card-title-text"><h2>JavaScript</h2></div>
-                        </div>
-                        <div class="card-info">
-                            <div class="star-rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star-outline"></ion-icon>
-                            </div>
-                            <div class="author-name">Author: Emily Chen</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container-items">
                 
             </div>
         </div>
     </div>
-    
+    <div class="footer-navbar">
+
+    </div>
 </body>
 
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 <script src="js/main.js"></script>
+
 </html>

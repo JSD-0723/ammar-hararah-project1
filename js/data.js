@@ -1,9 +1,9 @@
-const cardData = {
+export const data = {
     "html": {
         "title":"HTML",
         "type":"Web Development Languages",
         "img":"html.png",
-        "rating":"4",
+        "rating":"",
         "author":"Sarah Smith",
         "order": 1
     },
@@ -32,7 +32,7 @@ const cardData = {
         "order": 39
     },
     "angular": {
-        "title":"Web Analytics",
+        "title":"Angular",
         "type":"Frontend Frameworks and Libraries",
         "img":"angular.png",
         "rating":"3.75",
@@ -274,7 +274,7 @@ const cardData = {
     "ux": {
         "title":"User Experience (UX)",
         "type":"Web Development Concepts and Terminology",
-        "img":"ux.jpeg",
+        "img":"ux.png",
         "rating":"4",
         "author":"Luke Davis",
         "order": 23
@@ -283,7 +283,7 @@ const cardData = {
         "title":"Vue.js",
         "type":"Frontend Frameworks and Libraries",
         "img":"vuejs.jpeg",
-        "rating":"3.55",
+        "rating":"3.75",
         "author":"Ava Jones",
         "order": 7
     },
@@ -313,60 +313,3 @@ const cardData = {
     }
 }
 
-function toggleMode(){
-    document.querySelector("body").classList.toggle("dark-mode");
-}
-
-function showFavourites(){
-    document.querySelector(".footer-navbar").classList.toggle("visible");
-}
-
-document.querySelector("#toggle-mode").addEventListener("click", toggleMode); 
-document.querySelector("#toggle-fav").addEventListener("click", showFavourites); 
-
-function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-  
-    return div.firstChild;
-}
-
-function loadData(){
-    const keys = Object.keys(cardData);
-
-    keys.forEach(key => {
-        let rating = (parseFloat(cardData[key].rating)/5) * 100;
-        console.log(rating);
-        const template = `
-            <div class="card">
-                <div class="card-image" style="background-image: url('imgs/${cardData[key].img}');">
-                </div>
-                <div class="card-details">
-                    <div class="card-title">
-                        <p>${cardData[key].type}</p>
-                        <h3>${cardData[key].title}</h3>
-                    </div>
-                    <div class="card-info">
-                        <div class="rating-box">
-                            <div class="star-ratings">
-                                <div class="fill-ratings" style="width: ${rating}%;">
-                                    <span>★★★★★</span>
-                                </div>
-                                <div class="empty-ratings">
-                                    <span>★★★★★</span>
-                                </div>
-                        </div>
-                        </div>
-                        <p>Author: ${cardData[key].author}</p>
-                    </div>
-                </div>
-            </div>
-    `
-        document.querySelector(".container-items").appendChild(createElementFromHTML(template));
-
-    });
-    
-
-}
-
-loadData();
