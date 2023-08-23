@@ -20,14 +20,17 @@
                 <a href="#">Web Topics</a>
             </div>
             <nav class="navbar-items">
-                <li class="navbar-item">
+                <button id="toggle-mode" class="navbar-item" type="button">
                     <ion-icon name="moon-outline"></ion-icon>
-                    <a href="#dark-mode">Dark Mode</a>
-                </li>
-                <li class="navbar-item">
+                    <span>Dark Mode</span>
+                </button>
+                <a class="navbar-item" href="favourites.html">
+                    <button type="button">
                     <ion-icon name="heart-outline"></ion-icon>
-                    <a href="favourites">Favourites</a>
-                </li>
+                    <span>Favourites</span>
+                    </button>
+                </a>
+
             </nav>
         </div>
     </header>
@@ -54,15 +57,18 @@
     <div class="content">
         <div class="search-bar-container">
             <div class="search-bar">
-                <div class="search-input"></div>
-                <div class="search-sort-by"></div>
-                <div class="search-filter-by"></div>
+                <div class="input">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Search the website...">
+                </div>
+                <div class="sort-by"></div>
+                <div class="filter-by"></div>
             </div>
         </div>
 
         <div class="search-result">
             <div class="search-result-title">
-
+                <h2>"24" Web Topics Found</h2>
             </div>
             <div class="search-result-content">
                 <div class="result-card">
@@ -184,5 +190,5 @@
 </body>
 
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
-
+<script src="js/main.js"></script>
 </html>
