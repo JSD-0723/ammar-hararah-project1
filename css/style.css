@@ -56,7 +56,6 @@ body {
 .navbar-item {
     border: 1px solid var(--lines-color);
     color: var(--body-text);
-    list-style-type: none;
     border-radius: 5px;
     margin: auto 0 auto 4px;
     font-size: 14.5px;
@@ -349,6 +348,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .star-ratings .fill-ratings {
@@ -396,7 +396,7 @@ footer p{
 }
 
 footer ion-icon{
-    color: red;
+    color: #de0f3b;
     font-size: 31px;
     text-align: center;
     vertical-align: bottom;
@@ -472,3 +472,21 @@ footer ion-icon{
 
 
 /* Sticky Navbar END */
+.no-bullets {
+    list-style-type: none;
+}
+
+.zero-spacing{
+    padding: 0;
+    margin:0;
+}
+
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+}

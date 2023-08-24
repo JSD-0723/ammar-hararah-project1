@@ -1,0 +1,195 @@
+.content{
+    margin: 0px;
+}
+.content-details{
+    background-color: #333;
+}
+.content-details,.sub-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-details h2{
+    color: var(--brand-secondary);
+}
+
+.content-details h1,.content-details p{
+    color: white;
+}
+
+.empty-flex{
+    display: flex;
+    flex: 20;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    flex: 63;
+    margin-top: 30px;
+    position: relative;
+
+}
+
+.card-desc{
+    display: flex;
+    flex-direction: column;
+    flex: 60;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+.main-card{
+    display: flex;
+    flex: 34
+}
+
+.card-desc h2, .card-desc h1,.card-desc p{
+    margin: 0;
+}
+
+.card-desc p{
+    margin: 18px 0;
+    font-weight: 400;
+}
+
+.card-desc p, .table-of-contents{
+    margin-right: 25px;
+}
+
+.rating-box{
+    margin-top: -4px;
+}
+
+.card-desc h2{
+    font-size: 15.5px;
+}
+
+.card-desc h1{
+    font-size: 24px;
+}
+
+.star-ratings{
+    color: #333;
+}
+
+.navbar-title{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.table-of-contents{
+    background-color: var(--bg_default);
+    border: 1px solid var(--lines-color);
+    border-radius: 5px;
+    box-shadow: var(--card-shadow);
+}
+
+.table-of-contents .table-title h2{
+    font-weight: 800;
+}
+
+.table-of-contents .table-title,.table-of-contents li{
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--lines-color);
+}
+
+.table-of-contents li{
+    display: flex;
+    font-weight: 500;
+}
+
+
+.table-of-contents ion-icon{
+    color: var(--brand-secondary);
+    font-size: 24px;
+    padding-right: 15px;
+}
+
+.card-desc .table-of-contents h2{
+    font-size: 24px;
+}
+
+footer p{
+    font-size: 16px;
+    font-weight: 400;
+}
+footer ion-icon{
+    color: #de0f3b;
+    font-size: 23px;
+}
+
+.sub-content{
+    margin-bottom: 20px;
+}
+.main-card.active{
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    border: 2px solid #fff;
+    background-color: #fff;
+    display: flex;
+}
+
+.main-card .main-image{
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.main-card .main-decription{
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+}
+.main-decription h4{
+    margin: 22px 12px 5px;
+}
+
+.main-card .fav-box{
+    box-sizing: border-box;
+    border: 1px solid var(--lines-color);
+    margin: auto;
+    padding: 0px 18px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.fav-box small{
+    color: grey;
+    text-align: center;
+    padding: 10px;
+}
+.fav-box p{
+    color: #333;
+}
+
+.main-card.active a,.main-card.active a:visited{
+    color: var(--brand-primary);
+    font-weight: 400;
+}
+
+button#add-to-fav{
+    display: flex;
+    background-color: var(--brand-secondary);
+    border: none;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 20px;
+    margin: auto;
+    width: fit-content;
+}
+
+button#add-to-fav ion-icon{
+    font-size: 28px;
+    padding-left: 5px;
+
+}
+
+.main-image img{
+    height: 200px;
+    max-width: 315px;
+    object-fit: cover;
+}

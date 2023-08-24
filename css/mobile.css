@@ -63,6 +63,33 @@
         font-size: 15px;
     }
 
+    .empty-flex, .main-card:not(.active){
+        display: none;
+    }
+    .main-card.active{
+        position: initial;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main{
+        flex-direction: column;
+    }
+
+    .table-of-contents,.card-desc{
+        margin: 20px;
+    }
+    .card-desc p{
+        margin-right: 0;
+    }
+
+    .main-image img{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+    }
+
+    
 
 }
 
