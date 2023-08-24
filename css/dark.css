@@ -3,4 +3,7 @@
     --bg_body	       : #282828;
     --lines-color	   : #000000;
     --body-text	       : #EDEDED;
+    --star-empty      : var(--bg_body);
+    --card-shadow      : none;
+
 }

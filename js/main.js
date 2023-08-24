@@ -32,10 +32,10 @@ const cardData = {
         "order": 39
     },
     "angular": {
-        "title":"Web Analytics",
+        "title":"Angular",
         "type":"Frontend Frameworks and Libraries",
         "img":"angular.png",
-        "rating":"3.75",
+        "rating":"3.7",
         "author":"Jessica Davis",
         "order": 5
     },
@@ -46,14 +46,6 @@ const cardData = {
         "rating":"4",
         "author":"Madison Davis",
         "order": 31
-    },
-    "cloud": {
-        "title":"Cloud Computing",
-        "type":"Web Development Concepts and Terminology",
-        "img":"cloud.jpeg",
-        "rating":"4.25",
-        "author":"Jacob Garcia",
-        "order": 33
     },
     "cms": {
         "title":"Content Management Systems (CMS)",
@@ -75,7 +67,7 @@ const cardData = {
         "title":"CSS",
         "type":"Web Development Languages",
         "img":"css.webp",
-        "rating":"3.75",
+        "rating":"3.65",
         "author":"David Lee",
         "order": 2
     },
@@ -116,7 +108,7 @@ const cardData = {
         "type":"Backend Frameworks and Libraries",
         "img":"expressjs.webp",
         "rating":"4",
-        "author":"Sofia Rodriguez",
+        "author":"Sophia Rodriguez",
         "order": 9
     },
     "flask": {
@@ -140,7 +132,7 @@ const cardData = {
         "type":"Web Development Languages",
         "img":"javascript.jpg",
         "rating":"4",
-        "author":"Mia Brown",
+        "author":"Emily Chen",
         "order": 3
     },
     "jquery": {
@@ -155,7 +147,7 @@ const cardData = {
         "title":"JSON",
         "type":"Web Development Concepts and Terminology",
         "img":"json.png",
-        "rating":"3.75",
+        "rating":"3.65",
         "author":"Liam Hernandez",
         "order": 18
     },
@@ -207,13 +199,23 @@ const cardData = {
         "author":"Liam Hernandez",
         "order": 36
     },
+    "cloud": {
+        "title":"Cloud Computing",
+        "type":"Web Development Concepts and Terminology",
+        "img":"cloud.jpeg",
+        "rating":"4.25",
+        "author":"Jacob Garcia",
+        "order": 33,
+        "fav":1
+    },
     "react": {
         "title":"React",
         "type":"Frontend Frameworks and Libraries",
         "img":"react.webp",
         "rating":"4",
         "author":"Daniel Brown",
-        "order": 6
+        "order": 6,
+        "fav":1
     },
     "responsive": {
         "title":"Responsive Design",
@@ -291,12 +293,12 @@ const cardData = {
         "title":"Web Accessibility Initiative (WAI)",
         "type":"Web Development Concepts and Terminology",
         "img":"wai.jpeg",
-        "rating":"3.75",
+        "rating":"3.65",
         "author":"Avery Perez",
-        "order": 36
+        "order": 37
     },
     "web-security": {
-        "title":"Web Accessibility Initiative (WAI)",
+        "title":"Web Security",
         "type":"Web Development Concepts and Terminology",
         "img":"web-security.jpeg",
         "rating":"3.9",
@@ -324,27 +326,104 @@ function showFavourites(){
 document.querySelector("#toggle-mode").addEventListener("click", toggleMode); 
 document.querySelector("#toggle-fav").addEventListener("click", showFavourites); 
 
+let currentYear = new Date().getYear()+1900;
+document.querySelector("footer>p>b").append(currentYear);
+
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
   
     return div.firstChild;
 }
+function sortData(Data){
+    const CardDataArray = Object.values(Data);
+
+    CardDataArray.sort(function mySort(a,b){
+        if (a.order < b.order){
+            return -1;
+        }else{
+            return 1;
+        }
+    })
+
+    return CardDataArray;
+}
+
+function getFavourites(data){
+    const CardDataArray = Object.values(data);
+
+    let filteredArray = CardDataArray.filter(function mySort(info){
+        return info.fav === 1;
+    })
+    filteredArray.sort(function mySort(a,b){
+        if (a.order < b.order){
+            return -1;
+        }else{
+            return 1;
+        }
+    })
+
+    return filteredArray;
+}
+
+function loadFavourites(){
+    const favourites = getFavourites(cardData);
+
+    if (favourites.length === 0){
+        return;
+    }
+
+    document.querySelector(".mini-cards").innerHTML = "";
+
+
+    favourites.forEach(card => {
+        let rating = (parseFloat(card.rating)/5) * 100;
+
+        const template = `<div class="mini-card">
+    <div class="mini-card-image">
+        <img src="imgs/${card.img}" />
+    </div>
+    <div class="card-details">
+        <div class="card-title">
+            <h3>${card.title}</h3>
+        </div>
+        <div class="card-info">
+            <div class="rating-box">
+                <div class="star-ratings">
+                    <div class="fill-ratings" style="width: ${rating}%;">
+                        <span>★★★★★</span>
+                    </div>
+                    <div class="empty-ratings">
+                        <span>★★★★★</span>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>`
+
+    document.querySelector(".mini-cards").appendChild(createElementFromHTML(template));
+    
+});
+    
+
+    
+
+}
 
 function loadData(){
-    const keys = Object.keys(cardData);
+    const SortedArray = sortData(cardData);
 
-    keys.forEach(key => {
-        let rating = (parseFloat(cardData[key].rating)/5) * 100;
-        console.log(rating);
+    SortedArray.forEach(card => {
+        let rating = (parseFloat(card.rating)/5) * 100;
         const template = `
             <div class="card">
-                <div class="card-image" style="background-image: url('imgs/${cardData[key].img}');">
+                <div class="card-image" style="background-image: url('imgs/${card.img}');">
                 </div>
                 <div class="card-details">
                     <div class="card-title">
-                        <p>${cardData[key].type}</p>
-                        <h3>${cardData[key].title}</h3>
+                        <p>${card.type}</p>
+                        <h3>${card.title}</h3>
                     </div>
                     <div class="card-info">
                         <div class="rating-box">
@@ -357,7 +436,7 @@ function loadData(){
                                 </div>
                         </div>
                         </div>
-                        <p>Author: ${cardData[key].author}</p>
+                        <p>Author: ${card.author}</p>
                     </div>
                 </div>
             </div>
@@ -370,3 +449,4 @@ function loadData(){
 }
 
 loadData();
+loadFavourites();

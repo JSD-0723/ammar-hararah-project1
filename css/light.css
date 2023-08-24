@@ -3,4 +3,6 @@
  	--bg_body	       :#F0F9FF;
  	--lines-color	   :#DDDDDD;
  	--body-text	       :#333333;
+	 --star-empty    : #FFFFFF;
+	 --card-shadow      : 0px 0px 4px gainsboro;
 }
