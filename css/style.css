@@ -312,19 +312,26 @@ body {
     padding: 14px;
 }
 
-.card-details p{
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 12.7px;
-    font-weight: 500;
+.card-details p,.mini-card .card-details h3{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.card-details p,
+.card-details h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12.7px;
+    font-weight: 500;
+}
+
 .card-details h3 {
     font-size: 14px;
     font-weight: 800;
+}
+
+.card .card-details h3{
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
